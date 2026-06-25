@@ -29,6 +29,7 @@ const connectDB = async () => {
     await seedDB();
   } catch (err) {
     console.log('⚠️ MongoDB connection blocked. Switching to Bulletproof Local Mode...');
+    console.log('REAL ERROR:', err.message);
     useLocalDB = true;
     seedLocalDB();
   }
